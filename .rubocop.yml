@@ -1,0 +1,114 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.2
+  TargetRailsVersion: 7.0.0
+  DisabledByDefault: true
+  Exclude:
+    - "bin/**/*"
+    - "vendor/**/*"
+    - "public/**/*"
+    - "node_modules/**/*"
+
+Bundler:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+Layout/TrailingEmptyLines:
+  Enabled: true
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+Lint/CircularArgumentReference:
+  Enabled: true
+Lint/Debugger:
+  Enabled: true
+Lint/DeprecatedClassMethods:
+  Enabled: true
+Lint/DuplicateMethods:
+  Enabled: false
+Lint/DuplicateHashKey:
+  Enabled: true
+Lint/EachWithObjectArgument:
+  Enabled: true
+Lint/ElseLayout:
+  Enabled: true
+Lint/EmptyEnsure:
+  Enabled: true
+Lint/EmptyInterpolation:
+  Enabled: true
+Lint/EnsureReturn:
+  Enabled: true
+Lint/FloatOutOfRange:
+  Enabled: true
+Lint/FormatParameterMismatch:
+  Enabled: true
+Lint/LiteralAsCondition:
+  Enabled: true
+Lint/LiteralInInterpolation:
+  Enabled: true
+Lint/Loop:
+  Enabled: true
+Lint/NextWithoutAccumulator:
+  Enabled: true
+Lint/RandOne:
+  Enabled: true
+Lint/RequireParentheses:
+  Enabled: true
+Lint/RescueException:
+  Enabled: true
+Lint/RedundantStringCoercion:
+  Enabled: false
+Lint/RedundantCopDisableDirective:
+  Enabled: true
+Lint/RedundantSplatExpansion:
+  Enabled: false
+Lint/UnreachableCode:
+  Enabled: true
+Lint/UselessSetterCall:
+  Enabled: true
+Lint/Void:
+  Enabled: true
+
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+
+# Security/Eval:
+#   Enabled: false
+# Security/JSONLoad:
+#   Enabled: true
+# Security/MarshalLoad:
+#   Enabled: true
+# Security/Open:
+#   Enabled: false
+# Security/YAMLLoad:
+#   Enabled: false
+
+# Style/EndBlock:
+#   Enabled: true
+# Style/HashSyntax:
+#   Enabled: true
+# Style/StringLiterals:
+#   Enabled: true
+#   EnforcedStyle: "double_quotes"
+#   Exclude:
+#     - "config/**/*.rb"
+#     - Rakefile
+# Style/CaseEquality:
+#   Enabled: true
+# Style/ClassMethods:
+#   Enabled: true
+# Style/ClassVars:
+#   Enabled: true
+# Style/CollectionMethods:
+#   Enabled: true
+#   PreferredMethods:
+#     collect: "map"
+#     collect!: "map!"
+#     inject: "reduce"
+#     detect: "find"
+#     find_all: "select"
