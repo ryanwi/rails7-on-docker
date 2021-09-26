@@ -9,6 +9,8 @@ services:
       - "3000:3000"
     env_file:
       - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history 
     depends_on:
       - db
       - redis
