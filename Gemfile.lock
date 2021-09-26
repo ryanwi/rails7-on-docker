@@ -181,6 +181,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.5.0)
+      rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -225,6 +227,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-rails
   rubocop-rails
+  rubocop-rspec
   stimulus-rails (>= 0.4.0)
   turbo-rails (>= 0.7.11)
   tzinfo-data
