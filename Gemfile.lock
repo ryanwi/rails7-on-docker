@@ -70,7 +70,7 @@ GEM
       thor (~> 1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    debug (1.1.0)
+    debug (1.2.0)
       irb
       reline (>= 0.2.7)
     diff-lcs (1.4.4)
