@@ -28,7 +28,6 @@ jobs:
 
     env:
       RAILS_ENV: test
-      NODE_ENV: test
       DATABASE_URL: postgres://postgres:postgres@localhost:5432
 
     services:
