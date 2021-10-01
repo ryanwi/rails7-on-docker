@@ -6,6 +6,12 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
 
 **NOTE:** [There is also an example Rails 6 application working in Docker with Webpacker](https://github.com/ryanwi/rails-on-docker)
 
+## Features
+
+* Rails 7 alpha
+* Dockerfile and Docker Compose configuration
+* PostgreSQL database
+* Redis
 
 ## Initial setup
 ```
