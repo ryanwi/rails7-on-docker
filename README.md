@@ -12,6 +12,8 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
 * Dockerfile and Docker Compose configuration
 * PostgreSQL database
 * Redis
+* GitHub Actions for tests, linters, and security checks
+* Dependabot for automated updates
 
 ## Initial setup
 ```
