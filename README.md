@@ -54,9 +54,11 @@ docker compose up --build
 ## Credits/References
 
 ### Rails with Docker
-* https://docs.docker.com/compose/rails/
-* https://pragprog.com/book/ridocker/docker-for-rails-developers
-* https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development
+* [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/)
+* [Docker for Rails Developers
+Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/book/ridocker/docker-for-rails-developers)
+* [Ruby on Whales:
+Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development)
 
 ### Rails 7 with importmaps 
 
