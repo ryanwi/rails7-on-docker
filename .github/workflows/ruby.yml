@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -44,7 +44,7 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
