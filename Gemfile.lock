@@ -111,7 +111,7 @@ GEM
     pg (1.2.3)
     puma (5.5.2)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -194,7 +194,7 @@ GEM
     stimulus-rails (0.7.1)
       rails (>= 6.0.0)
     thor (1.1.0)
-    turbo-rails (7.1.0)
+    turbo-rails (7.1.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -207,7 +207,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.5.0.beta6)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   aarch64-linux
