@@ -84,7 +84,7 @@ GEM
     io-console (0.5.9)
     irb (1.3.7)
       reline (>= 0.2.7)
-    jbuilder (2.11.2)
+    jbuilder (2.11.3)
       activesupport (>= 5.0.0)
     loofah (2.12.0)
       crass (~> 1.0.2)
@@ -221,7 +221,7 @@ DEPENDENCIES
   bundler-audit
   debug (>= 1.0.0)
   importmap-rails (>= 0.3.4)
-  jbuilder (~> 2.7)
+  jbuilder (~> 2.11)
   pg (~> 1.1)
   puma (~> 5.5)
   rails (~> 7.0.0.alpha2)
