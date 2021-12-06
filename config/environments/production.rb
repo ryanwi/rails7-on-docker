@@ -55,7 +55,7 @@ Rails.application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [:request_id]
+  config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -85,7 +85,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
-    logger           = ActiveSupport::Logger.new($stdout)
+    logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
@@ -113,4 +113,14 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Inserts middleware to perform automatic shard swapping. The `shard_selector` hash
+  # can be used to pass options to the `ShardSelector` middleware. The `lock` option is
+  # used to determine whether shard swapping should be prohibited for the request.
+  #
+  # The `shard_resolver` option is used by the middleware to determine which shard
+  # to switch to. The application must provide a mechanism for finding the shard name
+  # in a proc. See guides for an example.
+  # config.active_record.shard_selector = { lock: true }
+  # config.active_record.shard_resolver = ->(request) { Tenant.find_by!(host: request.host).shard }
 end
