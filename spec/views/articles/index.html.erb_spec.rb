@@ -5,11 +5,11 @@ RSpec.describe "articles/index", type: :view do
     assign(:articles, [
       Article.create!(
         title: "Title",
-        text: "MyText"
+        content: "MyText"
       ),
       Article.create!(
         title: "Title",
-        text: "MyText"
+        content: "MyText"
       )
     ])
   end

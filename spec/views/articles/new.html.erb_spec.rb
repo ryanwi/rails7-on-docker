@@ -4,7 +4,7 @@ RSpec.describe "articles/new", type: :view do
   before(:each) do
     assign(:article, Article.new(
       title: "MyString",
-      text: "MyText"
+      content: "MyContent"
     ))
   end
 
@@ -15,7 +15,8 @@ RSpec.describe "articles/new", type: :view do
 
       assert_select "input[name=?]", "article[title]"
 
-      assert_select "textarea[name=?]", "article[text]"
+      #TODO: with rich_text, this is not a textarea
+      # assert_select "textarea[name=?]", "article[content]"
     end
   end
 end
