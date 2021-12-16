@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_12_16_184103) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
-    t.text "text"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
