@@ -3,6 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= render @article %>
+<%= render "articles/comments", article: @article %>
 
 <div>
   <%= link_to "Edit this article", edit_article_path(@article) %> |

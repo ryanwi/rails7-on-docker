@@ -5,8 +5,16 @@
   </p>
 
   <p>
-    <strong>Text:</strong>
-    <%= article.text %>
+    Posted <%= time_tag article.created_at %>
+  </p>
+
+  <p>
+    <strong><%= pluralize article.comments.count, "comment" %></strong>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= article.content %>
   </p>
 
   <p>
