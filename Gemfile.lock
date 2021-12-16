@@ -80,7 +80,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.0)
+    importmap-rails (1.0.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.5.9)
