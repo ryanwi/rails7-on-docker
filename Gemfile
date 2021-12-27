@@ -52,6 +52,7 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 gem "brakeman"
+gem "net-smtp"
 gem "bundler-audit"
 gem "rubocop-rails"
 
