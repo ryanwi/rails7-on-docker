@@ -147,6 +147,10 @@ GEM
     mini_portile2 (2.6.1)
     minitest (5.15.0)
     msgpack (1.4.2)
+    net-imap (0.2.2)
+      digest
+      net-protocol
+      strscan
     net-pop (0.1.1)
       digest
       net-protocol
@@ -238,6 +242,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
+    strscan (3.0.1)
     thor (1.1.0)
     timeout (0.2.0)
     turbo-rails (1.0.0)
@@ -277,6 +282,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  net-imap
   net-pop
   net-smtp
   pg (~> 1.1)
