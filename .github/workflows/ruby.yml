@@ -10,6 +10,10 @@ jobs:
   linters:
     runs-on: ubuntu-latest
 
+    env:
+      DISABLE_BOOTSNAP: true
+      DISABLE_BOOTSNAP_LOAD_PATH_CACHE: true
+
     steps:
       - uses: actions/checkout@v2.4.0
       - name: Set up Ruby
@@ -29,6 +33,8 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: postgres://postgres:postgres@localhost:5432
+      DISABLE_BOOTSNAP: true
+      DISABLE_BOOTSNAP_LOAD_PATH_CACHE: true
 
     services:
       postgres:
