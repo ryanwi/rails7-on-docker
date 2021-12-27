@@ -54,6 +54,7 @@ gem "image_processing", "~> 1.2"
 gem "brakeman"
 gem "bundler-audit"
 gem "rubocop-rails"
+gem "net-smtp"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
