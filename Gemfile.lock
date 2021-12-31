@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 499f12f6c03a4114eb649310e65200fe5d894db0
+  revision: 5dbbe244b3a778a493f1b0974aa5d2e72c0b1071
   branch: 7-0-stable
   specs:
     actioncable (7.0.0)
@@ -265,7 +265,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.2)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   aarch64-linux
