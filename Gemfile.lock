@@ -1,5 +1,7 @@
-GEM
-  remote: https://rubygems.org/
+GIT
+  remote: https://github.com/rails/rails.git
+  revision: 46c056628a4a154af8fec7f48cbf633b6aac4316
+  branch: 7-0-stable
   specs:
     actioncable (7.0.0)
       actionpack (= 7.0.0)
@@ -60,6 +62,31 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    rails (7.0.0)
+      actioncable (= 7.0.0)
+      actionmailbox (= 7.0.0)
+      actionmailer (= 7.0.0)
+      actionpack (= 7.0.0)
+      actiontext (= 7.0.0)
+      actionview (= 7.0.0)
+      activejob (= 7.0.0)
+      activemodel (= 7.0.0)
+      activerecord (= 7.0.0)
+      activestorage (= 7.0.0)
+      activesupport (= 7.0.0)
+      bundler (>= 1.15.0)
+      railties (= 7.0.0)
+    railties (7.0.0)
+      actionpack (= 7.0.0)
+      activesupport (= 7.0.0)
+      method_source
+      rake (>= 12.2)
+      thor (~> 1.0)
+      zeitwerk (~> 2.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
@@ -152,32 +179,11 @@ GEM
       rack (>= 1.2.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rails (7.0.0)
-      actioncable (= 7.0.0)
-      actionmailbox (= 7.0.0)
-      actionmailer (= 7.0.0)
-      actionpack (= 7.0.0)
-      actiontext (= 7.0.0)
-      actionview (= 7.0.0)
-      activejob (= 7.0.0)
-      activemodel (= 7.0.0)
-      activerecord (= 7.0.0)
-      activestorage (= 7.0.0)
-      activesupport (= 7.0.0)
-      bundler (>= 1.15.0)
-      railties (= 7.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
-    railties (7.0.0)
-      actionpack (= 7.0.0)
-      activesupport (= 7.0.0)
-      method_source
-      rake (>= 12.2)
-      thor (~> 1.0)
-      zeitwerk (~> 2.5)
     rainbow (3.0.0)
     rake (13.0.6)
     redis (4.5.1)
@@ -282,7 +288,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler
-  rails (~> 7.0.0)
+  rails!
   redis (~> 4.0)
   rspec-rails
   rubocop-rails
