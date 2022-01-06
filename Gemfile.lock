@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 46c056628a4a154af8fec7f48cbf633b6aac4316
+  revision: 9c2977b3afe143b7a44af2efb896ccca0523576a
   branch: 7-0-stable
   specs:
     actioncable (7.0.0)
@@ -15,12 +15,18 @@ GIT
       activestorage (= 7.0.0)
       activesupport (= 7.0.0)
       mail (>= 2.7.1)
+      net-imap
+      net-pop
+      net-smtp
     actionmailer (7.0.0)
       actionpack (= 7.0.0)
       actionview (= 7.0.0)
       activejob (= 7.0.0)
       activesupport (= 7.0.0)
       mail (~> 2.5, >= 2.5.4)
+      net-imap
+      net-pop
+      net-smtp
       rails-dom-testing (~> 2.0)
     actionpack (7.0.0)
       actionview (= 7.0.0)
