@@ -11,9 +11,9 @@ services:
       - .env
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
-    # depends_on:
-    #   - db
-    #   - redis
+    depends_on:
+      - db
+      - redis
   db:
     image: postgres:13
     ports:
