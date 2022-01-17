@@ -8,14 +8,15 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
 
 ## Features
 
-* Rails 7 alpha
+* Rails 7
+* Ruby 3
 * Dockerfile and Docker Compose configuration
 * PostgreSQL database
 * Redis
 * GitHub Actions for 
   * tests
   * Rubocop for linting
-  * Security checks with Brakeman and [bundler-audit](https://github.com/rubysec/bundler-audit)
+  * Security checks with [Brakeman](https://github.com/presidentbeef/brakeman) and [bundler-audit](https://github.com/rubysec/bundler-audit)
 * Dependabot for automated updates
 
 ## Initial setup
