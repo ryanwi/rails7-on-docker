@@ -89,8 +89,6 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    cssbundling-rails (1.0.0)
-      railties (>= 6.0.0)
     debug (1.4.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
@@ -115,8 +113,6 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jsbundling-rails (1.0.0)
-      railties (>= 6.0.0)
     loofah (2.14.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -154,7 +150,16 @@ GEM
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
+<<<<<<< HEAD
     pg (1.3.2)
+=======
+    pg (1.3.1)
+    propshaft (0.6.1)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
+>>>>>>> 09f1e78 (fresh propshaft based gemfile)
     public_suffix (4.0.6)
     puma (5.6.2)
       nio4r (~> 2.0)
@@ -239,13 +244,6 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    sprockets (4.0.2)
-      concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
-    sprockets-rails (3.4.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      sprockets (>= 3.0.0)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     strscan (3.0.1)
@@ -284,22 +282,27 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
-  cssbundling-rails
   debug
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+<<<<<<< HEAD
   jsbundling-rails
+=======
+  net-imap
+  net-pop
+  net-smtp
+>>>>>>> 09f1e78 (fresh propshaft based gemfile)
   pg (~> 1.3)
-  puma (~> 5.6)
+  propshaft
+  puma (~> 5.0)
   rack-mini-profiler
-  rails (~> 7.0.0)
-  redis (~> 4.6)
+  rails (~> 7.0.2, >= 7.0.2.1)
+  redis (~> 4.0)
   rspec-rails
   rubocop-rails
   rubocop-rspec
   selenium-webdriver
-  sprockets-rails (>= 3.4.1)
   stimulus-rails
   turbo-rails
   tzinfo-data
