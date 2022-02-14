@@ -53,9 +53,6 @@ gem "image_processing", "~> 1.2"
 
 gem "brakeman"
 gem "bundler-audit"
-gem "net-imap"
-gem "net-pop"
-gem "net-smtp"
 gem "rubocop-rails"
 
 group :development, :test do
