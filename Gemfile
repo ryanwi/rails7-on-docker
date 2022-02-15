@@ -76,3 +76,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "dartsass-rails", "~> 0.2.0"
