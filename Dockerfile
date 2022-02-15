@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN gem update --system
+RUN gem install bundler:2.3.7
+
 WORKDIR /usr/src/app
 
 ENTRYPOINT ["./entrypoint.sh"]
