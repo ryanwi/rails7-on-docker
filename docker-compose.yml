@@ -14,6 +14,14 @@ services:
     depends_on:
       - db
       - redis
+  css:
+    build: .
+    command: bash -c "bin/rails dartsass:watch"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    env_file:
+      - .env
   db:
     image: postgres:13
     ports:
