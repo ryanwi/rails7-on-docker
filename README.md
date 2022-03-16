@@ -44,7 +44,7 @@ docker compose run --rm web bin/rails c
 
 ## Running tests
 ```
-docker compose run --rm web bundle exec rspec
+docker compose run --rm web bin/rspec
 ```
 
 ## Updating gems
