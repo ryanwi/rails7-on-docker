@@ -1,6 +1,6 @@
 FROM ruby:3.1.1-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
     curl \
