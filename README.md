@@ -44,7 +44,7 @@ docker compose run --rm web bin/rails c
 
 ## Running tests
 ```
-docker compose run --rm web bundle exec rspec
+docker compose run --rm web bin/rspec
 ```
 
 ## Updating gems
@@ -58,7 +58,7 @@ docker compose up --build
 ### Rails with Docker
 * [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/)
 * [Docker for Rails Developers
-Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/book/ridocker/docker-for-rails-developers)
+Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
 * [Ruby on Whales:
 Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development)
 

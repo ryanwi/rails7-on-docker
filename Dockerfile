@@ -1,14 +1,20 @@
-FROM ruby:3.1.0-slim
+FROM ruby:3.1.1-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     build-essential \
+    gnupg2 \
+    curl \
+    less \
+    git \
     libpq-dev \
     postgresql-client \
-    git \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN gem update --system
-RUN gem install bundler:2.3.7
+ENV LANG=C.UTF-8 \
+  BUNDLE_JOBS=4 \
+  BUNDLE_RETRY=3
+  
+RUN gem update --system && gem install bundler
 
 WORKDIR /usr/src/app
 
