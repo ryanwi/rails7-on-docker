@@ -30,7 +30,7 @@ COPY . .
 # want real secrets in the image or image history. The real secret is passed in
 # at run time
 ARG SECRET_KEY_BASE=fakekeyforassets
-RUN bundle exec rails assets:clobber && bundle exec rails assets:precompile
+RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
 EXPOSE 3000
 
