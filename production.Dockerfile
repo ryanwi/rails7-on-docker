@@ -3,7 +3,6 @@ FROM ruby:3.1.2-slim
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
-    git \
     libpq-dev \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
