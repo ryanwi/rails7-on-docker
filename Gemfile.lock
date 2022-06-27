@@ -186,7 +186,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis (4.6.0)
+    redis (4.7.0)
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -289,7 +289,7 @@ DEPENDENCIES
   puma (~> 5.6)
   rack-mini-profiler
   rails (~> 7.0.3)
-  redis (~> 4.6)
+  redis (~> 4.7)
   rspec-rails
   rubocop-rails
   rubocop-rspec
