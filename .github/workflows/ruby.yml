@@ -49,10 +49,7 @@ jobs:
             - 33306:3306
           options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
-    steps:
-      - name: Verify unittest DB exists
-        run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES"
-      
+    steps:     
       - uses: actions/checkout@v3
 
       - name: Set up Ruby
@@ -63,6 +60,7 @@ jobs:
       - name: Create database
         run: |
           sudo /etc/init.d/mysql start 
+          mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
