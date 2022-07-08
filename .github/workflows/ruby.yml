@@ -41,7 +41,7 @@ jobs:
           env:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_ALLOW_EMPTY_PASSWORD: true
-            MYSQL_ROOT_HOST: 172.*.*.*
+            MYSQL_ROOT_HOST: 172.18.0.1
             MYSQL_LOG_CONSOLE: true
             MYSQL_DATABASE: test
           ports:
