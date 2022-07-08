@@ -38,6 +38,7 @@ jobs:
     services:
       mysql:
           image: mysql
+          #
           env:
             MYSQL_ROOT_PASSWORD: change_me_right_now
             MYSQL_ALLOW_EMPTY_PASSWORD: true
