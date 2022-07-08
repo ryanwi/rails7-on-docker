@@ -42,6 +42,7 @@ jobs:
             MYSQL_ROOT_PASSWORD: change_me_right_now
             MYSQL_ALLOW_EMPTY_PASSWORD: true
             MYSQL_ROOT_HOST: 172.*.*.*
+            MYSQL_LOG_CONSOLE: true
           ports:
             - 33306:3306
           options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
