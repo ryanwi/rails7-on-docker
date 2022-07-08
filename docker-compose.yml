@@ -15,19 +15,19 @@ services:
       - db
       - redis
   db:
-    image: postgres:13
+    image: mysql 
     ports:
-      - "5432:5432"
+      - "3306:3306"
+    restart: always
     environment:
-      - POSTGRES_PASSWORD=changeme
+      - MYSQL_ROOT_PASSWORD=change_me_right_now
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - ./init-script.sql:/docker-entrypoint-initdb.d/init-script.sql
   redis:
     image: redis
     volumes:
       - redis_data:/data
 
 volumes:
-  pg_data:
   redis_data:
   bundle:

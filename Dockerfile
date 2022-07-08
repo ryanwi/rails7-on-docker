@@ -5,9 +5,10 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     gnupg2 \
     less \
     git \
-    libpq-dev \
-    postgresql-client \
+    telnet \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN apt-get update -qq && apt-get install -y default-libmysqlclient-dev
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
