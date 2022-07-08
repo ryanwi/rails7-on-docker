@@ -44,7 +44,7 @@ jobs:
             MYSQL_ROOT_HOST: 172.18.0.1
             MYSQL_LOG_CONSOLE: true
             MYSQL_DATABASE: test
-            MYSQL_USER: railsondocker
+            MYSQL_USER: root
             MYSQL_PASSWORD: change_me_right_now
           ports:
             - 8888:3306
@@ -61,7 +61,7 @@ jobs:
       - name: Create database
         run: |
           sudo /etc/init.d/mysql start  --skip-grant-tables 
-          mysql -h 127.0.0.1 --port 8888 -pchange_me_right_now -urailsondocker -e "SHOW DATABASES"
+          mysql -h 127.0.0.1 --port 8888 -pchange_me_right_now -uroot -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
