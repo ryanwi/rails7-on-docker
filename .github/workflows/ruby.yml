@@ -43,6 +43,7 @@ jobs:
             MYSQL_USER: railsondocker
             MYSQL_PASSWORD: change_me_right_now
             MYSQL_ROOT_PASSWORD: change_me_right_now
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
             MYSQL_HOST: 127.0.0.1
           ports:
             - 33306:3306
