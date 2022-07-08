@@ -39,10 +39,14 @@ jobs:
       mysql:
           image: mysql
           env:
-            MYSQL_ALLOW_EMPTY_PASSWORD: true
+            MYSQL_DATABASE: railsondocker_test
+            MYSQL_USER: railsondocker
+            MYSQL_PASSWORD: change_me_right_now
+            MYSQL_ROOT_PASSWORD: change_me_right_now
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
             MYSQL_HOST: 127.0.0.1
           ports:
-            - 3306:3306
+            - 33306:3306
           options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:     
@@ -55,8 +59,8 @@ jobs:
 
       - name: Create database
         run: |
-          sudo /etc/init.d/mysql start 
-          mysql --port 3306 -uroot -e "SHOW DATABASES"
+          sudo /etc/init.d/mysql start  --skip-grant-tables 
+          mysql --host 127.0.0.1 --port 3306 -urailsondocker -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
