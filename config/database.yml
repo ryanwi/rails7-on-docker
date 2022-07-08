@@ -19,7 +19,6 @@ test:
   database: railsondocker_test
   username: railsondocker
   password: change_me_right_now
-  host: 127.0.0.1 
   #rails7-on-docker-mysql_db_1 
 
 production:
