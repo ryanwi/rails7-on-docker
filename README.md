@@ -1,6 +1,6 @@
 ![Ruby](https://github.com/ryanwi/rails7-on-docker/workflows/Ruby/badge.svg)
 
-# Rails 7 on Docker MYSQL demo application
+# Rails 7 on Docker ** MYSQL ** demo application
 
 This app demonstrates Rails 7 with Mysql8, import maps, turbo, stimulus and hotwire, all running in Docker.
 
