@@ -4,10 +4,9 @@
 
 This app demonstrates Rails 7 with Mysql8, import maps, turbo, stimulus and hotwire, all running in Docker.
 
-**NOTE:** [There is also an example Rails 6 application working in Docker with Webpacker](https://github.com/ryanwi/rails-on-docker)
-
 ## Features
 
+* Mysql 8
 * Rails 7
 * Ruby 3
 * Dockerfile and Docker Compose configuration
@@ -19,16 +18,9 @@ This app demonstrates Rails 7 with Mysql8, import maps, turbo, stimulus and hotw
   * Security checks with [Brakeman](https://github.com/presidentbeef/brakeman) and [bundler-audit](https://github.com/rubysec/bundler-audit)
 * Dependabot for automated updates
 
-## Initial setup
-```
-cp .env.example .env
-docker-compose build
-docker-compose run --rm web bin/rails db:setup
-```
-
 ## Running the Rails app
 ```
-docker-compose up
+sh start.sh 
 ```
 
 ## Running the Rails console
@@ -53,28 +45,8 @@ docker-compose run --rm web bundle update
 docker-compose up --build
 ```
 
-## Production build
-
-```
-docker build -f production.Dockerfile .
-```
-
 ## Credits/References
+Thanks!! to ryanwi for the postgres version 
 
-### Rails with Docker
-* [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/)
-* [Docker for Rails Developers
-Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
-* [Ruby on Whales:
-Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development)
+https://github.com/ryanwi/rails7-on-docker
 
-### Rails 7 with importmaps 
-
-* [Alpha preview: Modern JavaScript in Rails 7 without Webpack](https://www.youtube.com/watch?v=PtxZvFnL2i0)
-
-### Rails 7 with hotwire
-
-* [Stimulus 3 + Turbo 7 = Hotwire 1.0](https://world.hey.com/dhh/stimulus-3-turbo-7-hotwire-1-0-9d507133)
-* [Turbo 7](https://world.hey.com/hotwired/turbo-7-0dd7a27f)
-* [Rails 7 will have three great answers to JavaScript in 2021+](https://world.hey.com/dhh/rails-7-will-have-three-great-answers-to-javascript-in-2021-8d68191b)
-* [Hotwire Turbo Replacing Rails UJS](https://www.driftingruby.com/episodes/hotwire-turbo-replacing-rails-ujs)
