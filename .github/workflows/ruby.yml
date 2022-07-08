@@ -45,7 +45,6 @@ jobs:
             MYSQL_ROOT_HOST: 172.18.0.1
             MYSQL_LOG_CONSOLE: true
             MYSQL_DATABASE: test
-            MYSQL_USER: root
             MYSQL_PASSWORD: change_me_right_now
           ports:
             - 8888:3306
