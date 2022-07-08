@@ -39,13 +39,13 @@ jobs:
       mysql:
           image: mysql
           env:
-            MYSQL_ROOT_PASSWORD: change_me_right_now
+            MYSQL_ROOT_PASSWORD: password
             MYSQL_ALLOW_EMPTY_PASSWORD: true
             MYSQL_ROOT_HOST: 172.*.*.*
             MYSQL_LOG_CONSOLE: true
             MYSQL_DATABASE: test
           ports:
-            - 33306:3306
+            - 8888:3306
           options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:     
@@ -59,7 +59,7 @@ jobs:
       - name: Create database
         run: |
           sudo /etc/init.d/mysql start  --skip-grant-tables 
-          mysql -h 127.0.0.1 --port 33306 -pchange_me_right_now -uroot -e "SHOW DATABASES"
+          mysql -h 127.0.0.1 --port 8888 -ppassword -uroot -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
