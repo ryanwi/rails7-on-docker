@@ -17,8 +17,8 @@ development:
 test:
   <<: *default
   database: railsondocker_test
-  username: railsondocker
-  password: change_me_right_now
+  username: root
+  password: ""
   host: 127.0.0.1 
 
 production:
