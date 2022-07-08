@@ -46,7 +46,7 @@ docker-compose up --build
 ```
 
 ## Credits/References
-Thanks!! to ryanwi for the postgres version 
+Thanks!! to ryanwi for the postgres version.  The conversion to MYSQL8 was pretty easy!!
 
 https://github.com/ryanwi/rails7-on-docker
 
