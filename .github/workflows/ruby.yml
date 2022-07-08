@@ -57,7 +57,7 @@ jobs:
       - name: Create database
         run: |
           sudo /etc/init.d/mysql start  --skip-grant-tables 
-          mysql --port 3306 -urailsondocker -e "SHOW DATABASES"
+          mysql --port 3306 -uroot -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
