@@ -39,9 +39,6 @@ jobs:
       mysql:
           image: mysql
           env:
-            MYSQL_DATABASE: railsondocker_test
-            MYSQL_USER: railsondocker
-            MYSQL_PASSWORD: change_me_right_now
             MYSQL_ROOT_PASSWORD: change_me_right_now
             MYSQL_ALLOW_EMPTY_PASSWORD: yes
             MYSQL_HOST: 127.0.0.1
