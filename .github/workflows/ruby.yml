@@ -44,7 +44,6 @@ jobs:
             MYSQL_ALLOW_EMPTY_PASSWORD: true
             MYSQL_ROOT_HOST: 172.18.0.1
             MYSQL_LOG_CONSOLE: true
-            MYSQL_DATABASE: railsondocker_test
             MYSQL_PASSWORD: change_me_right_now
           ports:
             - 8888:3306
