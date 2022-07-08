@@ -40,7 +40,7 @@ jobs:
           image: mysql
           env:
             MYSQL_ROOT_PASSWORD: change_me_right_now
-            MYSQL_ALLOW_EMPTY_PASSWORD: yes
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
             MYSQL_HOST: 127.0.0.1
           ports:
             - 33306:3306
@@ -57,7 +57,7 @@ jobs:
       - name: Create database
         run: |
           sudo /etc/init.d/mysql start  --skip-grant-tables 
-          mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES"
+          mysql --host 127.0.0.1 --port 3306 -pchange_me_right_now -uroot -e "SHOW DATABASES"
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
