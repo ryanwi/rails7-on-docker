@@ -61,6 +61,9 @@ jobs:
         run: |
           sudo /etc/init.d/mysql start  --skip-grant-tables 
           mysql -h 127.0.0.1 --port 8888 -pchange_me_right_now -uroot -e "SHOW DATABASES"
+          echo "************"
+          printenv
+          echo "************" 
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
