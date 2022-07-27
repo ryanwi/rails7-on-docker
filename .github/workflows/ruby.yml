@@ -32,24 +32,24 @@ jobs:
 
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432
       DISABLE_BOOTSNAP: true
       DISABLE_BOOTSNAP_LOAD_PATH_CACHE: true
 
     services:
-      postgres:
-        image: postgres:12
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
+      mysql:
+          image: mysql
+          #
+          env:
+            MYSQL_ROOT_PASSWORD: change_me_right_now
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+            MYSQL_ROOT_HOST: 172.18.0.1
+            MYSQL_LOG_CONSOLE: true
+            MYSQL_PASSWORD: change_me_right_now
+          ports:
+            - 8888:3306
+          options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
-    steps:
+    steps:     
       - uses: actions/checkout@v3
 
       - name: Set up Ruby
@@ -59,6 +59,11 @@ jobs:
 
       - name: Create database
         run: |
+          sudo /etc/init.d/mysql start  --skip-grant-tables 
+          mysql -h 127.0.0.1 --port 8888 -pchange_me_right_now -uroot -e "SHOW DATABASES"
+          echo "************"
+          printenv
+          echo "************" 
           bundle exec rails db:create
           bundle exec rails db:schema:load
 
