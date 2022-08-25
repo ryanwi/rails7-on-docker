@@ -26,6 +26,8 @@ docker compose build
 docker compose run --rm web bin/rails db:setup
 ```
 
+## Testing
+
 ## Running the Rails app
 ```
 docker compose up
