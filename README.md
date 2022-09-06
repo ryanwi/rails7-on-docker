@@ -1,5 +1,7 @@
 ![Ruby](https://github.com/ryanwi/rails7-on-docker/workflows/Ruby/badge.svg)
 
+Start here: https://github.com/ryanwi/rails7-on-docker/generate
+
 # Rails 7 on Docker demo application
 
 This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and hotwire, all running in Docker.
