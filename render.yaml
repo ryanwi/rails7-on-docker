@@ -3,7 +3,9 @@ services:
     name: rails7-on-docker
     env: docker
     repo: https://github.com/ryanwi/rails7-on-docker
+    region: oregon
     branch: main
+    plan: free
     dockerCommand: bundle exec puma -C config/puma.rb
     numInstances: 1
     healthCheckPath: /
