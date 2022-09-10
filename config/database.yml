@@ -81,5 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: railsondocker_production
   url: <%= ENV['DATABASE_URL'] %>
