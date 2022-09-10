@@ -82,5 +82,4 @@ test:
 production:
   <<: *default
   database: railsondocker_production
-  username: railsondocker
-  password: <%= ENV["RAILSONDOCKER_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
