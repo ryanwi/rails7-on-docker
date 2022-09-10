@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: rails7-on-docker
+    name: mysite
     env: docker
     dockerfilePath: ./production.Dockerfile
     repo: https://github.com/ryanwi/rails7-on-docker
@@ -16,3 +16,10 @@ services:
     dockerCommand: bundle exec puma -C config/puma.rb
     numInstances: 1
     healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
