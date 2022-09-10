@@ -7,6 +7,7 @@ services:
   - type: web
     name: rails7-on-docker
     env: docker
+    dockerfilePath: ./production.Dockerfile
     repo: https://github.com/ryanwi/rails7-on-docker
     region: oregon
     branch: main
