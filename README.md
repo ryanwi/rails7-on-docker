@@ -69,6 +69,7 @@ This app can be hosted wherever Ruby is supported and PostgreSQL databases can b
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ryanwi/rails7-on-docker)
 
+Set `SECRET_KEY_BASE` environment variable
 
 ## Credits/References
 
