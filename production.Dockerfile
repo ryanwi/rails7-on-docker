@@ -32,7 +32,9 @@ COPY . .
 ARG SECRET_KEY_BASE=fakekeyforassets
 RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
-RUN bin/rails db:migrate
+RUN printenv
+
+# RUN bin/rails db:migrate
 
 EXPOSE 3000
 
