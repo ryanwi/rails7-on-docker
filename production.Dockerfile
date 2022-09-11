@@ -32,6 +32,7 @@ COPY . .
 ARG SECRET_KEY_BASE=fakekeyforassets
 RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
+ARG DATABASE_URL
 RUN printenv
 
 # RUN bin/rails db:migrate
