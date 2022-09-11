@@ -32,6 +32,10 @@ COPY . .
 ARG SECRET_KEY_BASE=fakekeyforassets
 RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
+RUN bin/rails db:migrate
+
 EXPOSE 3000
+
+# ENTRYPOINT db:migrate
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
