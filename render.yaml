@@ -22,4 +22,4 @@ services:
           name: mysite
           property: connectionString
       - key: SECRET_KEY_BASE
-        sync: false
+        sync: false # placeholder for a value to be added in the dashboard
