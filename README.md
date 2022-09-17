@@ -23,7 +23,7 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
 
 ## Requirements
 
-Please ensure you are using Docker Compose V2 ..This project relies on the `docker compose` command, not the previous `docker-compose` standalone program.
+Please ensure you are using Docker Compose V2. .This project relies on the `docker compose` command, not the previous `docker-compose` standalone program.
 
 https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command
 
