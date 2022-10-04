@@ -70,3 +70,6 @@ yarn-debug.log*
 !/storage/.keep
 
 /config/master.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
