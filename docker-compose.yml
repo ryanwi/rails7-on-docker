@@ -21,7 +21,7 @@ services:
       - .:/usr/src/app
       - bundle:/usr/local/bundle
   db:
-    image: postgres:14
+    image: postgres:15
     ports:
       - "5432:5432"
     environment:
