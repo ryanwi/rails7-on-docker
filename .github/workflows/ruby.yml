@@ -19,7 +19,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
+          bundler-cache: false
       - name: Run linters
         run: bundle exec rubocop --parallel
       - name: Ruby security checks
@@ -55,7 +55,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
+          bundler-cache: false
 
       - name: Create database
         run: |
