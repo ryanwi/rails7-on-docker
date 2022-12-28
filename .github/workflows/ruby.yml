@@ -20,6 +20,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: false
+      - name: bundle
+        run: bundle install
       - name: Run linters
         run: bundle exec rubocop --parallel
       - name: Ruby security checks
@@ -56,11 +58,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: false
-
+      - name: bundle
+        run: bundle install
       - name: Create database
         run: |
           bundle exec rails db:create
           bundle exec rails db:schema:load
-
       - name: Run tests
         run: bundle exec rake
