@@ -91,6 +91,8 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
+      irb (>= 1.5.0)
+      reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     ffi (1.15.5)
@@ -104,6 +106,9 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    io-console (0.6.0)
+    irb (1.6.2)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -183,6 +188,8 @@ GEM
     redis-client (0.11.2)
       connection_pool
     regexp_parser (2.6.1)
+    reline (0.3.2)
+      io-console (~> 0.5)
     rexml (3.2.5)
     rspec-core (3.12.0)
       rspec-support (~> 3.12.0)
@@ -266,6 +273,7 @@ PLATFORMS
   aarch64-linux
   arm64-darwin-20
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
