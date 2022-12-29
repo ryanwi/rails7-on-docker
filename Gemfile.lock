@@ -90,7 +90,7 @@ GEM
     connection_pool (2.3.0)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.0)
+    debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
@@ -281,7 +281,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
-  debug (= 1.7.0)
+  debug (= 1.7.1)
   image_processing (~> 1.12)
   importmap-rails
   jbuilder
