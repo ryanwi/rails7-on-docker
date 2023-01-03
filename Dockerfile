@@ -7,7 +7,7 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     git \
     libpq-dev \
     postgresql-client \
-    libvips42 \
+    libvips \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LANG=C.UTF-8 \
