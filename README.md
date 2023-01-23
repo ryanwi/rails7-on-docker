@@ -109,4 +109,5 @@ Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby
 
 - <https://www.ryanwilliams.dev>
 - <https://twitter.com/ryanwi>
+- <https://hachyderm.io/@ryanwi>
 - <https://github.com/ryanwi>
