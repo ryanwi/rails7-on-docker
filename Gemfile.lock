@@ -142,6 +142,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -152,7 +154,7 @@ GEM
     puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.2)
+    rack (2.2.6.3)
     rack-mini-profiler (3.0.0)
       rack (>= 1.2.0)
     rack-test (2.0.2)
@@ -279,6 +281,7 @@ PLATFORMS
   arm64-darwin-20
   arm64-darwin-21
   arm64-darwin-22
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -310,4 +313,4 @@ RUBY VERSION
    ruby 3.2.1p31
 
 BUNDLED WITH
-   2.4.1
+   2.4.7
