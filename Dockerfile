@@ -8,7 +8,11 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     libpq-dev \
     postgresql-client \
     libvips \
+    # curl \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# RUN curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - \
+#     && apt-get install -y nodejs
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
