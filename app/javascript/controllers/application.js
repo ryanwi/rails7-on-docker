@@ -7,5 +7,3 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
-
-console.log('Hello World from controllers/application.js');

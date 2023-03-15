@@ -57,8 +57,9 @@ gem "rubocop-rails"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "1.7.1", platforms: %i[ mri mingw x64_mingw ]
-  gem "rspec-rails"
-  gem "rubocop-rspec"
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -80,3 +81,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem 'apparition', github: 'twalpole/apparition', ref: 'ca86be4d54af835d531dbcd2b86e7b2c77f85f34'

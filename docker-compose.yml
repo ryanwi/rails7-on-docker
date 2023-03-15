@@ -11,9 +11,16 @@ services:
       - .env
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
+      - RAILS_ENV=${RAILS_ENV}
     depends_on:
       - db
       - redis
+  chrome:
+    command: [ 'sh', 'wrapper-script.sh' ]
+    image: headless-chrome
+    build: ./chrome
+    ports:
+      - 9222:9222
   db:
     image: postgres:15
     ports:
