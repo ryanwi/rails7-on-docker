@@ -45,3 +45,14 @@ jobs:
         run: |
           sleep 20
           docker logs rails-on-docker
+
+      - run: |
+          docker container ls
+
+      - name: Check Health
+        run: |
+          HEALTH_STATUS=$(docker inspect --format='{{.State.Status}}' rails-on-docker);
+          echo "$HEALTH_STATUS"
+          if [ "$HEALTH_STATUS" != "running" ]; then
+            exit 1
+          fi
