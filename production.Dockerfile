@@ -21,7 +21,8 @@ RUN bundle config frozen true \
  && bundle config jobs 4 \
  && bundle config deployment true \
  && bundle config without 'development test' \
- && bundle install
+ && bundle install \
+ && bundle exec bootsnap precompile --gemfile
 
 COPY . .
 
