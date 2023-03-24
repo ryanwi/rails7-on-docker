@@ -30,6 +30,8 @@ jobs:
           push: false
           load: true
           tags: ${{ env.TEST_TAG }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Inspect
         run: |
