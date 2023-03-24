@@ -19,6 +19,7 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
   * tests
   * Rubocop for linting
   * Security checks with [Brakeman](https://github.com/presidentbeef/brakeman) and [bundler-audit](https://github.com/rubysec/bundler-audit)
+  * Building and testing of a production Docker image
 * Dependabot for automated updates
 
 ## Requirements
@@ -69,8 +70,16 @@ docker compose up --build
 
 ## Production build
 
+(adjust tags as needed)
+
 ```
-docker build -f production.Dockerfile .
+# to load the built image into local docker images
+docker build --tag rails-on-docker --file production.Dockerfile . --load
+
+or
+
+# to push the built image
+docker build --tag rails-on-docker --file production.Dockerfile . --push
 ```
 
 ## Deployment
