@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  TEST_TAG: rails-on-docker:test
+
 jobs:
   build-and-test-image:
     runs-on: ubuntu-latest
@@ -26,8 +29,12 @@ jobs:
           file: ./production.Dockerfile
           push: false
           load: true
-          tags: rails-on-docker:latest
+          tags: ${{ env.TEST_TAG }}
 
       - name: Inspect
         run: |
-          docker image inspect rails-on-docker:latest
+          docker image inspect ${{ env.TEST_TAG }}
+
+      - name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG }}
