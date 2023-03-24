@@ -20,12 +20,14 @@ FROM base as build
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
+    libpq-dev \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN gem update --system && gem install bundler
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
+
 # TODO: consolidate bundle config better, currently split between ENV and `bundle config`
 RUN bundle config frozen true \
  && bundle config jobs 4 \
@@ -56,9 +58,6 @@ FROM base
 
 # Install packages needed for deployment
 # RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
-#     build-essential \
-#     gnupg2 \
-#     libpq-dev \
 #   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Copy built artifacts: gems, application
