@@ -37,6 +37,11 @@ jobs:
         run: |
           docker image inspect ${{ env.TEST_TAG }}
 
-      # - name: Test
-      #   run: |
-      #     docker run --rm --env SECRET_KEY_BASE=dummy ${{ env.TEST_TAG }}
+      - name: Start
+        run: |
+          docker run -d --rm --name=rails-on-docker --env SECRET_KEY_BASE=dummy ${{ env.TEST_TAG }}
+
+      - name: Logs
+        run: |
+          sleep 20
+          docker logs rails-on-docker
