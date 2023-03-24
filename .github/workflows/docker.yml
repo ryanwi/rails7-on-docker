@@ -39,20 +39,20 @@ jobs:
 
       - name: Start
         run: |
-          docker run --rm --name=rails-on-docker --env SECRET_KEY_BASE=dummy ${{ env.TEST_TAG }}
+          docker run -d --rm --name=rails-on-docker --env SECRET_KEY_BASE=dummy ${{ env.TEST_TAG }}
 
-      # - name: Logs
-      #   run: |
-      #     sleep 20
-      #     docker logs rails-on-docker
+      - name: Logs
+        run: |
+          sleep 20
+          docker logs rails-on-docker
 
-      # - run: |
-      #     docker container ls
+      - run: |
+          docker container ls
 
-      # - name: Check Health
-      #   run: |
-      #     HEALTH_STATUS=$(docker inspect --format='{{.State.Status}}' rails-on-docker);
-      #     echo "$HEALTH_STATUS"
-      #     if [ "$HEALTH_STATUS" != "running" ]; then
-      #       exit 1
-      #     fi
+      - name: Check Health
+        run: |
+          HEALTH_STATUS=$(docker inspect --format='{{.State.Status}}' rails-on-docker);
+          echo "$HEALTH_STATUS"
+          if [ "$HEALTH_STATUS" != "running" ]; then
+            exit 1
+          fi
