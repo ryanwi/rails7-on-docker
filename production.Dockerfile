@@ -57,8 +57,9 @@ RUN ./bin/rails assets:precompile
 FROM base
 
 # Install packages needed for deployment
-# RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
-#   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
+  libpq-dev \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
