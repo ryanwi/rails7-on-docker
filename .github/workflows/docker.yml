@@ -8,6 +8,7 @@ on:
 
 env:
   TEST_TAG: rails-on-docker:test
+  SECRET_KEY_BASE: dummy
 
 jobs:
   build-and-test-image:
