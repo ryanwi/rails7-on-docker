@@ -1,7 +1,6 @@
 services:
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/usr/src/app
       - bundle:/usr/local/bundle
@@ -12,9 +11,12 @@ services:
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
       - RAILS_ENV=${RAILS_ENV}
+      - HOST=web
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
   chrome:
     command: [ 'sh', 'wrapper-script.sh' ]
     image: headless-chrome
@@ -29,6 +31,11 @@ services:
       - POSTGRES_PASSWORD=changeme
     volumes:
       - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   redis:
     image: redis
     volumes:

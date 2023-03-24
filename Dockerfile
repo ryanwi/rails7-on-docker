@@ -8,7 +8,7 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     libpq-dev \
     postgresql-client \
     libvips \
-    # curl \
+    curl \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # RUN curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - \
@@ -25,5 +25,7 @@ WORKDIR /usr/src/app
 ENTRYPOINT ["./bin/docker-entrypoint.sh"]
 
 EXPOSE 3000
+HEALTHCHECK --interval=10s --retries=10 --start-period=20s --timeout=10s \
+  CMD curl --fail http://localhost:3000/health || exit 1
 
-CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
+CMD ["bin/rails", "s", "-p", "3000", "-b", "0.0.0.0"]

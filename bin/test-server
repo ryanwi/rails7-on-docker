@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 export RAILS_ENV=test
-docker compose up --build --remove-orphans web chrome
+docker compose up -d --build --remove-orphans web chrome

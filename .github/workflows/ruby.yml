@@ -28,39 +28,22 @@ jobs:
           bundle exec brakeman -q -w2
 
   test:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432
-      DISABLE_BOOTSNAP: true
-      DISABLE_BOOTSNAP_LOAD_PATH_CACHE: true
-
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
 
     steps:
-      - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v1
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
+    - name: Start containers
+      run: docker compose up -d --wait --build --remove-orphans web chrome
 
-      - name: Create database
-        run: |
-          bundle exec rails db:create
-          bundle exec rails db:schema:load
+    - name: Run tests
+      run: docker compose run --rm web bin/rake
 
-      - name: Run tests
-        run: bundle exec rake
+    - name: Stop containers
+      if: always()
+      run: docker compose --volumes down
