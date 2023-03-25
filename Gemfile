@@ -55,9 +55,9 @@ gem "bundler-audit"
 gem "rubocop-rails"
 
 group :development, :test do
+  gem 'cucumber-rails', :require => false
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "1.7.1", platforms: %i[ mri mingw x64_mingw ]
-  gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end

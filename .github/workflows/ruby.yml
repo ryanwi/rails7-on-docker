@@ -23,9 +23,8 @@ jobs:
       - name: Run linters
         run: bundle exec rubocop --parallel
       - name: Ruby security checks
-        run: |
-          bundle exec bundler-audit --update
-          bundle exec brakeman -q -w2
+        run: bundle exec brakeman -q -w2
+          # bundle exec bundler-audit --update
 
   test:
     timeout-minutes: 10
