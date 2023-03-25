@@ -11,4 +11,4 @@ Feature: Welcome
   Scenario: Greet
     Given I am on the home page
     When I type "Alberto" as name
-    Then I should see "Hello, Alberto!"
+    Then I should see "Hello, Midori!"
