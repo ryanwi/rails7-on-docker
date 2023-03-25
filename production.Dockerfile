@@ -78,6 +78,7 @@ USER rails:rails
 # https://community.render.com/t/release-command-for-db-migrations/247/6
 ARG RENDER
 ARG DATABASE_URL
+ARG SECRET_KEY_BASE
 RUN if [ -z "$RENDER" ]; then echo "var is unset"; else bin/rails db:migrate; fi
 
 # Start Server
