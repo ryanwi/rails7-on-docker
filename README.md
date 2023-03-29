@@ -72,14 +72,14 @@ docker compose up --build
 
 (adjust tags as needed)
 
+### with [BuildKit](https://docs.docker.com/build/buildkit/)
 ```
-# to load the built image into local docker images
-docker build --tag rails-on-docker --file production.Dockerfile . --load
+DOCKER_BUILDKIT=1 docker build --tag rails-on-docker --file production.Dockerfile . --load
+```
 
-or
-
-# to push the built image
-docker build --tag rails-on-docker --file production.Dockerfile . --push
+### With legacy builder (no BuildKit)
+```
+docker build --tag rails-on-docker --file production.Dockerfile .
 ```
 
 ## Deployment
