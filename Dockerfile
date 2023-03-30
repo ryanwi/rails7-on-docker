@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ruby:3.2.1-slim
+FROM ruby:3.2.2-slim
 
 # OS Level Dependencies
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
