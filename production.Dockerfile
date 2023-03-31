@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ruby:3.2.1-slim as base
+FROM ruby:3.2.2-slim as base
 
 WORKDIR /rails
 
