@@ -149,7 +149,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.2.0)
       ast (~> 2.4.1)
-    pg (1.5.0)
+    pg (1.5.1)
     public_suffix (5.0.1)
     puma (6.2.2)
       nio4r (~> 2.0)
@@ -293,7 +293,7 @@ DEPENDENCIES
   image_processing (~> 1.12)
   importmap-rails
   jbuilder
-  pg (~> 1.4)
+  pg (~> 1.5)
   puma (~> 6.1)
   rack-mini-profiler
   rails (~> 7.0.4)
