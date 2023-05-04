@@ -100,6 +100,7 @@ NOTE: You will need to generate a production secret with `bin/rails secret` and 
 Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
 * [Ruby on Whales:
 Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development)
+* [Rails generator to produce Dockerfiles and related files](https://github.com/rubys/dockerfile-rails)
 
 ### Rails 7 with importmaps 
 
