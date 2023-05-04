@@ -2,7 +2,7 @@
 
 ARG RUBY_VERSION=3.2.2
 
-FROM ruby:${RUBY_VERSION}-slim
+FROM ruby:${RUBY_VERSION}-slim as base
 
 WORKDIR /rails
 
