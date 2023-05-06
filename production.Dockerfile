@@ -29,8 +29,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     build-essential \
     gnupg2 \
     libpq-dev \
-    git \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    git
 
 RUN gem update --system && gem install bundler
 
