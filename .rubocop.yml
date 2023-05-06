@@ -4,7 +4,7 @@ require:
 
 AllCops:
   TargetRubyVersion: 3.2.2
-  TargetRailsVersion: 7.0.1
+  TargetRailsVersion: 7.1.0
   DisabledByDefault: true
   Exclude:
     - "bin/**/*"
