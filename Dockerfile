@@ -5,7 +5,13 @@ ARG RUBY_VERSION=3.2.2
 FROM ruby:${RUBY_VERSION}-slim
 
 # OS Level Dependencies
-RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
+RUN --mount=type=cache,target=/var/cache/apt \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked \
+  --mount=type=tmpfs,target=/var/log \
+  rm -f /etc/apt/apt.conf.d/docker-clean; \
+  echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache; \
+  apt-get update -qq \
+  && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
     less \
@@ -13,8 +19,7 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     libpq-dev \
     postgresql-client \
     libvips \
-    curl \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    curl
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
