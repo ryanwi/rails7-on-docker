@@ -19,11 +19,16 @@ FROM base as build
 # Install packages needed to build gems
 # This example intentionally does not require or install node.js
 
-RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
+RUN --mount=type=cache,target=/var/cache/apt \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked \
+  --mount=type=tmpfs,target=/var/log \
+  rm -f /etc/apt/apt.conf.d/docker-clean; \
+  echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache; \
+  apt-get update -qq \
+  && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
-    libpq-dev \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    libpq-dev
 
 RUN gem update --system && gem install bundler
 
