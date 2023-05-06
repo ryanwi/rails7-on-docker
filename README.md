@@ -92,6 +92,10 @@ This app can be hosted wherever Ruby is supported and PostgreSQL databases can b
 
 NOTE: You will need to generate a production secret with `bin/rails secret` and set it as the `SECRET_KEY_BASE` environment variable.
 
+#### Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fryanwi%2Frails7-on-docker)
+
 ## Credits/References
 
 ### Rails with Docker
