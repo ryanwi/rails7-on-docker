@@ -9,7 +9,7 @@ development:
   database: railsondocker_development
   username: railsondocker
   password: change_me_right_now
-  host: rails7-on-docker-mysql_db_1 
+  host: rails7-on-docker-mysql-db-1
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
