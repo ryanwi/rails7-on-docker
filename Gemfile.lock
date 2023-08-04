@@ -98,7 +98,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.4)
+    addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bindex (0.8.1)
@@ -159,7 +159,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.19.0)
-    msgpack (1.7.1)
+    msgpack (1.7.2)
     net-imap (0.3.7)
       date
       net-protocol
@@ -183,7 +183,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.3)
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.7.1)
@@ -208,7 +208,7 @@ GEM
     rake (13.0.6)
     redis (5.0.6)
       redis-client (>= 0.9.0)
-    redis-client (0.14.1)
+    redis-client (0.15.0)
       connection_pool
     regexp_parser (2.8.1)
     reline (0.3.7)
@@ -219,7 +219,7 @@ GEM
     rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.5)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-rails (6.0.3)
@@ -230,7 +230,7 @@ GEM
       rspec-expectations (~> 3.12)
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
-    rspec-support (3.12.0)
+    rspec-support (3.12.1)
     rubocop (1.55.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -260,7 +260,7 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
-    selenium-webdriver (4.11.0)
+    selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -290,7 +290,7 @@ GEM
     webdrivers (5.3.1)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
-      selenium-webdriver (~> 4.0)
+      selenium-webdriver (~> 4.0, < 4.11)
     webrick (1.8.1)
     websocket (1.2.9)
     websocket-driver (0.7.6)
