@@ -30,13 +30,18 @@
 # Rails.application.config.action_controller.allow_deprecated_parameters_hash_equality = false
 
 # Active Record Encryption now uses SHA-256 as its hash digest algorithm. Important: If you have
-# data encrypted with previous versions, you should not set the new default or the existing data
-# will fail to decrypt. In this case, if you load the new 7.1 defaults, you need to configure the
-# previous algorithm SHA-1:
+# data encrypted with previous Rails versions, there are two scenarios to consider:
+#
+# 1. If you have +config.active_support.key_generator_hash_digest_class+ configured as SHA1 (the default
+# before Rails 7.0), you need to configure SHA-1 for Active Record Encryption too:
 # Rails.application.config.active_record.encryption.hash_digest_class = OpenSSL::Digest::SHA1
-# Alternatively, if you don't have data encrypted previously, you can configure the new digest for
-# Active Record Encryption with:
+# 2. If you have +config.active_support.key_generator_hash_digest_class+ configured as SHA256 (the new default
+# in 7.0), then you need to configure SHA-256 for Active Record Encryption:
 # Rails.application.config.active_record.encryption.hash_digest_class = OpenSSL::Digest::SHA256
+#
+# If you don't currently have data encrypted with Active Record encryption, you can disable this setting to
+# configure the default behavior starting 7.1+:
+# Rails.application.config.active_record.encryption.support_sha1_for_non_deterministic_encryption = false
 
 # No longer run after_commit callbacks on the first of multiple Active Record
 # instances to save changes to the same database row within a transaction.
@@ -165,6 +170,10 @@
 # In previous versions of Rails, they ran in the inverse order.
 # Rails.application.config.active_record.run_after_transaction_callbacks_in_order_defined = true
 
+# Whether a `transaction` block is committed or rolled back when exited via `return`, `break` or `throw`.
+#
+# Rails.application.config.active_record.commit_transaction_on_non_local_return = true
+
 # ** Please read carefully, this must be configured in config/application.rb **
 # Change the format of the cache entry.
 # Changing this default means that all new cache entries added to the cache
@@ -179,9 +188,32 @@
 # Configure Action View to use HTML5 standards-compliant sanitizers when they are supported on your
 # platform.
 #
-# `Rails::HTML::Sanitizer.best_supported_vendor` will return `Rails::HTML5::Sanitizer` if it's
-# supported, else fall back to `Rails::HTML4::Sanitizer`.
+# `Rails::HTML::Sanitizer.best_supported_vendor` will cause Action View to use HTML5-compliant
+# sanitizers if they are supported, else fall back to HTML4 sanitizers.
 #
-# In previous versions of Rails, Action View always used `Rails::HTML4::Sanitizer`.
+# In previous versions of Rails, Action View always used `Rails::HTML4::Sanitizer` as its vendor.
 #
 # Rails.application.config.action_view.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
+
+# Configure Action Text to use an HTML5 standards-compliant sanitizer when it is supported on your
+# platform.
+#
+# `Rails::HTML::Sanitizer.best_supported_vendor` will cause Action Text to use HTML5-compliant
+# sanitizers if they are supported, else fall back to HTML4 sanitizers.
+#
+# In previous versions of Rails, Action Text always used `Rails::HTML4::Sanitizer` as its vendor.
+#
+# Rails.application.config.action_text.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
+
+# Configure the log level used by the DebugExceptions middleware when logging
+# uncaught exceptions during requests
+# Rails.application.config.action_dispatch.debug_exception_log_level = :error
+
+# Configure the test helpers in Action View, Action Dispatch, and rails-dom-testing to use HTML5
+# parsers.
+#
+# Nokogiri::HTML5 isn't supported on JRuby, so JRuby applications must set this to :html4.
+#
+# In previous versions of Rails, these test helpers always used an HTML4 parser.
+#
+# Rails.application.config.dom_testing_default_html_version = :html5
