@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: c1fb418007a0aee33cb64fb669e19dbd95f161b2
+  revision: 80592d6dc6c3d98ab26e4a8ab88462d6e6da87af
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -67,10 +67,14 @@ GIT
       activesupport (= 7.1.0.alpha)
       marcel (~> 1.0)
     activesupport (7.1.0.alpha)
+      base64
+      bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
       connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
     rails (7.1.0.alpha)
       actioncable (= 7.1.0.alpha)
@@ -101,6 +105,8 @@ GEM
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    base64 (0.1.1)
+    bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -126,6 +132,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
+    drb (2.1.1)
+      ruby2_keywords
     erubi (1.12.0)
     ffi (1.15.5)
     globalid (1.1.0)
@@ -157,9 +165,10 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     mini_magick (4.12.0)
-    mini_mime (1.1.2)
+    mini_mime (1.1.5)
     minitest (5.19.0)
     msgpack (1.7.2)
+    mutex_m (0.1.2)
     net-imap (0.3.7)
       date
       net-protocol
@@ -170,13 +179,13 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.3-aarch64-linux)
+    nokogiri (1.15.4-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.15.3-arm64-darwin)
+    nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.3-x86_64-darwin)
+    nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.3-x86_64-linux)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
@@ -184,7 +193,7 @@ GEM
       racc
     pg (1.5.3)
     public_suffix (5.0.3)
-    puma (6.3.0)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (3.0.8)
@@ -206,12 +215,12 @@ GEM
       nokogiri (~> 1.14)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis (5.0.6)
+    redis (5.0.7)
       redis-client (>= 0.9.0)
-    redis-client (0.15.0)
+    redis-client (0.16.0)
       connection_pool
     regexp_parser (2.8.1)
-    reline (0.3.7)
+    reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.12.2)
@@ -231,7 +240,8 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.55.1)
+    rubocop (1.56.1)
+      base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -252,13 +262,14 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rspec (2.23.0)
+    rubocop-rspec (2.23.2)
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -271,7 +282,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.2.1)
+    stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
@@ -337,4 +348,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.14
+   2.4.19
