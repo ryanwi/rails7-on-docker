@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 80592d6dc6c3d98ab26e4a8ab88462d6e6da87af
+  revision: b1ac22fe7edffaf47051c207d2c43d8971b98a25
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -136,8 +136,8 @@ GEM
       ruby2_keywords
     erubi (1.12.0)
     ffi (1.15.5)
-    globalid (1.1.0)
-      activesupport (>= 5.0)
+    globalid (1.2.1)
+      activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -147,8 +147,9 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.7.4)
-      reline (>= 0.3.6)
+    irb (1.8.1)
+      rdoc
+      reline (>= 0.3.8)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -166,7 +167,7 @@ GEM
     matrix (0.4.2)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
-    minitest (5.19.0)
+    minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.1.2)
     net-imap (0.3.7)
@@ -192,6 +193,8 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
+    psych (5.1.0)
+      stringio
     public_suffix (5.0.3)
     puma (6.3.1)
       nio4r (~> 2.0)
@@ -215,9 +218,11 @@ GEM
       nokogiri (~> 1.14)
     rainbow (3.1.1)
     rake (13.0.6)
+    rdoc (6.5.0)
+      psych (>= 4.0.0)
     redis (5.0.7)
       redis-client (>= 0.9.0)
-    redis-client (0.16.0)
+    redis-client (0.17.0)
       connection_pool
     regexp_parser (2.8.1)
     reline (0.3.8)
@@ -240,7 +245,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.56.1)
+    rubocop (1.56.2)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -258,11 +263,11 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.23.1)
       rubocop (~> 1.33)
-    rubocop-rails (2.20.2)
+    rubocop-rails (2.21.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rspec (2.23.2)
+    rubocop-rspec (2.24.0)
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
@@ -275,7 +280,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sprockets (4.2.0)
+    sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.4.2)
@@ -284,6 +289,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
+    stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
     turbo-rails (1.4.0)
