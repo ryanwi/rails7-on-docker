@@ -310,7 +310,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.5)
-  puma (~> 6.4)
+  puma (~> 6.3)
   rack-mini-profiler
   rails (~> 7.0.7)
   redis (~> 5.0)
