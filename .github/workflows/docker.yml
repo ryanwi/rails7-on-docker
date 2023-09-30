@@ -49,8 +49,8 @@ jobs:
 
       - name: Check Health
         run: |
-          HEALTH_STATUS=$(docker inspect --format='{{.State.Status}}' rails-on-docker);
+          HEALTH_STATUS=$(docker inspect --format='{{.State.Health}}' rails-on-docker);
           echo "$HEALTH_STATUS"
-          if [ "$HEALTH_STATUS" != "running" ]; then
+          if [ "$HEALTH_STATUS" != "healthy" ]; then
             exit 1
           fi
