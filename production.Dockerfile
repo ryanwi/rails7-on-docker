@@ -28,7 +28,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
   && apt-get install -yq --no-install-recommends \
     build-essential \
     gnupg2 \
-    libpq-dev
+    libpq-dev \
+    git
 
 RUN gem update --system && gem install bundler
 
@@ -49,16 +50,8 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompile assets
-# SECRET_KEY_BASE or RAILS_MASTER_KEY is required in production, but we don't
-# want real secrets in the image or image history. The real secret is passed in
-# at run time
-ARG SECRET_KEY_BASE=fakekeyforassets
-RUN ./bin/rails assets:precompile
-
-# TODO: This will work in Rails 7.1
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-# RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
