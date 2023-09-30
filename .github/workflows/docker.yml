@@ -49,8 +49,16 @@ jobs:
 
       - name: Check Health
         run: |
-          HEALTH_STATUS=$(docker inspect --format='{{.State.Health.Status}}' rails-on-docker);
-          echo "$HEALTH_STATUS"
-          if [ "$HEALTH_STATUS" != "healthy" ]; then
-            exit 1
-          fi
+          for i in {1..30}; do
+            status=$(docker inspect --format='{{.State.Health.Status}}' rails-on-docker)
+            if [ "$status" = "healthy" ]; then
+              echo "Container is healthy"
+              exit 0
+            elif [ "$status" = "unhealthy" ]; then
+              echo "Container is unhealthy"
+              exit 1
+            fi
+            sleep 1
+          done
+          echo "Timed out waiting for container to become healthy"
+          exit 1
