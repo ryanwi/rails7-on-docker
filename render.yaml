@@ -16,7 +16,7 @@ services:
     plan: free
     dockerCommand: "bundle exec puma -C config/puma.rb"
     numInstances: 1
-    healthCheckPath: /
+    healthCheckPath: /up
     envVars:
       - key: DATABASE_URL
         fromDatabase:
