@@ -1,4 +1,5 @@
 ![Ruby](https://github.com/ryanwi/rails7-on-docker/workflows/Ruby/badge.svg)
+![Ruby](https://github.com/ryanwi/rails7-on-docker/workflows/Docker/badge.svg)
 
 Start here: https://github.com/ryanwi/rails7-on-docker/generate
 
