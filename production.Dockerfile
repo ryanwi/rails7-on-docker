@@ -83,6 +83,5 @@ HEALTHCHECK --interval=5s --timeout=3s --start-period=0s --start-interval=5s --r
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-EXPOSE 10000
 # CMD ["./bin/rails", "server"]
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
