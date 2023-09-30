@@ -44,10 +44,8 @@ jobs:
       - name: Logs
         run: |
           sleep 20
+          docker ps
           docker logs rails-on-docker
-
-      - run: |
-          docker container ls
 
       - name: Check Health
         run: |
