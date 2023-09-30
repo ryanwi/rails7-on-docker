@@ -54,7 +54,7 @@ jobs:
             if [ "$status" = "healthy" ]; then
               echo "Container is healthy"
               exit 0
-            elif [ "$status" = "unhealthy" ]; then
+            else
               echo "Container is unhealthy"
               exit 1
             fi
