@@ -57,6 +57,7 @@ jobs:
               echo "Container is unhealthy"
               exit 1
             fi
+            echo "sleep for recheck"
             sleep 1
           done
           echo "Timed out waiting for container to become healthy"
