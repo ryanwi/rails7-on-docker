@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.2.2
-
-FROM ruby:${RUBY_VERSION}-slim
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
 # OS Level Dependencies
 RUN --mount=type=cache,target=/var/cache/apt \
@@ -29,7 +29,7 @@ RUN gem update --system && gem install bundler
 
 WORKDIR /usr/src/app
 
-ENTRYPOINT ["./bin/docker-entrypoint.sh"]
+ENTRYPOINT ["./bin/dev-docker-entrypoint"]
 
 EXPOSE 3000
 
