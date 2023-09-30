@@ -39,7 +39,7 @@ jobs:
 
       - name: Start
         run: |
-          docker run --rm --name=rails-on-docker ${{ env.TEST_TAG }}
+          docker run --rm --name=rails-on-docker --env SECRET_KEY_BASE=dummy ${{ env.TEST_TAG }}
 
       - name: Logs
         run: |
