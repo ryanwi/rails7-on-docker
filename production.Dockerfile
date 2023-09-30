@@ -78,7 +78,7 @@ USER rails:rails
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint-production"]
 
-HEALTHCHECK --interval=5s --timeout=3s --retries=3 --start-period=30s \
+HEALTHCHECK --interval=30s --timeout=30s --start-period=0s --start-interval=5s --retries=3 \
   CMD curl -f http://localhost:3000/up || exit 1
 
 # Start the server by default, this can be overwritten at runtime
