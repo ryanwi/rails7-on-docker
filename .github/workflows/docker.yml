@@ -61,3 +61,7 @@ jobs:
           done
           echo "Timed out waiting for container to become healthy"
           exit 1
+
+      - name: Logs
+        run: |
+          docker logs rails-on-docker
