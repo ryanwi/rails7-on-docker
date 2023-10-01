@@ -13,7 +13,7 @@ services:
     region: oregon
     branch: main
     plan: free
-    # dockerCommand: "bundle exec puma -C config/puma.rb"
+    dockerCommand: "bundle exec puma -C config/puma.rb"
     numInstances: 1
     healthCheckPath: /up
     envVars:

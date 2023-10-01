@@ -9,6 +9,4 @@ echo "${*}"
 #   ./bin/rails db:prepare
 # fi
 
-if [ -z "$RENDER" ]; then echo "var is unset"; else bin/rails db:migrate; fi
-
 exec "${@}"
