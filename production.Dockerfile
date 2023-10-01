@@ -8,9 +8,9 @@ WORKDIR /rails
 
 # Set production environment
 ENV RAILS_ENV="production" \
-    BUNDLE_DEPLOYMENT="1",
-    BUNDLE_JOBS="4",
-    BUNDLE_WITHOUT="development,test",
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_JOBS="4" \
+    BUNDLE_WITHOUT="development,test" \
     BUNDLE_PATH="/usr/local/bundle"
 
 
