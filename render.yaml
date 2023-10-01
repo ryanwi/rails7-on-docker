@@ -7,7 +7,7 @@ databases:
 services:
   - type: web
     name: mysite
-    env: docker
+    runtime: docker
     dockerfilePath: ./production.Dockerfile
     repo: https://github.com/ryanwi/rails7-on-docker
     region: oregon
