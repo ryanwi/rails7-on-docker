@@ -13,6 +13,7 @@ services:
     region: oregon
     branch: main
     plan: free
+    # buildCommand: "./bin/render-build.sh"
     dockerCommand: "bundle exec puma -C config/puma.rb"
     numInstances: 1
     healthCheckPath: /up

@@ -75,6 +75,13 @@ RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
+# Run database migrations when deploying to Render. It is not great, maybe there's a better way?
+# https://community.render.com/t/release-command-for-db-migrations/247/6
+ARG RENDER
+ARG DATABASE_URL
+ARG SECRET_KEY_BASE
+RUN if [ -z "$RENDER" ]; then echo "var is unset"; else bin/rails db:migrate; fi
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint-production"]
 
