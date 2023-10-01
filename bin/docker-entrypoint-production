@@ -9,4 +9,8 @@ echo "${*}"
 #   ./bin/rails db:prepare
 # fi
 
+# Run database migrations when deploying to Render. It is not great, maybe there's a better way?
+# https://community.render.com/t/release-command-for-db-migrations/247/6
+if [ -z "$RENDER" ]; then echo "var is unset"; else bin/rails db:migrate; fi
+
 exec "${@}"
