@@ -1,10 +1,14 @@
 #!/bin/bash -e
 
+echo "${*}"
+
 # If running the rails server then create or migrate existing database
 # if [ "${*}" == "./bin/rails server" ]; then
 #   ./bin/rails db:prepare
 # fi
 
-if [ -z "$RENDER" ]; then echo "var is unset"; else bin/rails db:migrate; fi
+if [ -n "$RENDER" ]; then
+  ./bin/rails db:migrate
+fi
 
 exec "${@}"
