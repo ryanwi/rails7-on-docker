@@ -76,7 +76,7 @@ RUN useradd rails --create-home --shell /bin/bash && \
 USER rails:rails
 
 # Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint-production"]
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 HEALTHCHECK --interval=15s --timeout=3s --start-period=0s --start-interval=5s --retries=3 \
   CMD curl -f http://localhost:3000/up || exit 1
