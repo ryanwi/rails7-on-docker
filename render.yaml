@@ -15,6 +15,7 @@ services:
     plan: free
     numInstances: 1
     healthCheckPath: /up
+    preDeployCommand: bin/rails db:migrate
     envVars:
       - key: PORT
         value: 3000
