@@ -1,11 +1,17 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
-# Remove a potentially pre-existing server.pid for Rails.
-rm -f /usr/src/app/tmp/pids/server.pid
+echo "entrypoint"
+echo "${*}"
 
-echo "bundle install..."
-bundle check || bundle install --jobs 4
+# NOTE: Enable this as you need to get migrations working in your deployed
+# (i.e. Production) environments. Match the condition check to what you have in
+# the Dockerfile CMD. I use puma in the production.Dockerfile as that's the
+# recommended option by the Puma team (https://github.com/puma/puma#rails), but
+# the default Rails Dockerfile uses `./bin/rails server`
+#
+# If running the rails server then create or migrate existing database
+# if [ "${*}" == "./bin/rails server" ]; then
+#   ./bin/rails db:prepare
+# fi
 
-# Then exec the container's main process (what's set as CMD in the Dockerfile).
-exec "$@"
+exec "${@}"

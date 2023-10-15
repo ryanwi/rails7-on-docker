@@ -75,7 +75,7 @@ docker compose up --build
 
 ### with [BuildKit](https://docs.docker.com/build/buildkit/)
 ```
-DOCKER_BUILDKIT=1 docker build --tag rails-on-docker --file production.Dockerfile . --load
+DOCKER_BUILDKIT=1 docker build --tag rails-on-docker --load .
 ```
 
 Test the image can be used and Rails starts up, use a fake key for testing purposes only:
