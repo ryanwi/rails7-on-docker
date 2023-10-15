@@ -8,7 +8,7 @@ services:
   - type: web
     name: mysite
     runtime: docker
-    dockerfilePath: ./production.Dockerfile
+    dockerfilePath: ./Dockerfile
     repo: https://github.com/ryanwi/rails7-on-docker
     region: oregon
     branch: main
