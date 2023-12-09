@@ -35,8 +35,6 @@ RUN --mount=type=cache,target=/var/cache/apt \
     libvips \
     pkg-config
 
-gem update --system
-
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
