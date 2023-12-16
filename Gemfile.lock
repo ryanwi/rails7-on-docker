@@ -78,6 +78,8 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.16.0)
+      execjs (~> 2)
     base64 (0.2.0)
     bigdecimal (3.1.6)
     bindex (0.8.1)
@@ -109,6 +111,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    execjs (2.9.1)
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -328,6 +331,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap (~> 5.3)
   brakeman
   bundler-audit
   capybara
