@@ -77,3 +77,6 @@ group :test do
 end
 
 gem "bootstrap", "~> 5.3"
+
+
+gem "dartsass-sprockets", "~> 3.0"
