@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+
+// here your custom bootstrap variables...
+@import "bootstrap";
