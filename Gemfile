@@ -49,8 +49,8 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 gem "bootstrap", "~> 5.3"
-gem "sassc-rails", "~> 2.1"
-# gem "dartsass-sprockets", "~> 3.0"
+# gem "sassc-rails", "~> 2.1"
+gem "dartsass-sprockets", "~> 3.0"
 
 group :development, :test do
   gem "brakeman"
