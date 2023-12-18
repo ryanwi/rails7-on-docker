@@ -103,14 +103,6 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
-    dartsass-ruby (3.0.2)
-      sass-embedded (~> 1.54, < 1.67)
-    dartsass-sprockets (3.0.0)
-      dartsass-ruby (~> 3.0)
-      railties (>= 4.0.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     date (3.3.4)
     debug (1.9.1)
       irb (~> 1.10)
@@ -123,9 +115,6 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (3.25.1-aarch64-linux)
-    google-protobuf (3.25.1-arm64-darwin)
-    google-protobuf (3.25.1-x86_64-linux)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -347,7 +336,6 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
-  dartsass-sprockets (~> 3.0)
   debug
   image_processing (~> 1.2)
   importmap-rails
@@ -361,6 +349,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rails-omakase
   rubocop-rspec
+  sassc-rails (~> 2.1)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
