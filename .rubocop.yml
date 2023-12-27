@@ -3,7 +3,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 3.2.2
+  TargetRubyVersion: 3.3.0
   TargetRailsVersion: 7.1.0
   DisabledByDefault: true
   Exclude:
