@@ -11,8 +11,7 @@ ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_JOBS="4" \
     BUNDLE_WITHOUT="development:test" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    DISABLE_BOOTSNAP="1"
+    BUNDLE_PATH="/usr/local/bundle"
 
 
 # Throw-away build stage to reduce size of final image
