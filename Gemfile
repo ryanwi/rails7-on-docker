@@ -55,6 +55,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rspec-rails"
   gem "rubocop-rails"
+  gem "rubocop-rails-omakase", require: false
   gem "rubocop-rspec"
 end
 

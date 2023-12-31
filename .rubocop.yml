@@ -2,6 +2,10 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+# Omakase Ruby styling for Rails
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
 AllCops:
   TargetRubyVersion: 3.3.0
   TargetRailsVersion: 7.1.0
