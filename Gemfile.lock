@@ -145,14 +145,14 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.9)
+    net-imap (0.4.9.1)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
     nokogiri (1.16.0-aarch64-linux)
@@ -162,7 +162,7 @@ GEM
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     parallel (1.24.0)
-    parser (3.2.2.4)
+    parser (3.3.0.2)
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
@@ -220,7 +220,7 @@ GEM
     redis-client (0.19.1)
       connection_pool
     regexp_parser (2.8.3)
-    reline (0.4.1)
+    reline (0.4.2)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.12.2)
@@ -257,7 +257,7 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.25.0)
       rubocop (~> 1.33)
-    rubocop-minitest (0.34.2)
+    rubocop-minitest (0.34.3)
       rubocop (>= 1.39, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
     rubocop-performance (1.20.1)
