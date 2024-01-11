@@ -13,4 +13,9 @@ export default class extends Controller {
     this.outputTarget.textContent =
       `Hello, ${this.nameTarget.value}!`
   }
+  complement() {
+    console.log('complement');
+    this.outputTarget.textContent =
+      `${this.nameTarget.value} is a great name`
+  }
 }

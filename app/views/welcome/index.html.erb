@@ -3,13 +3,17 @@
 <%= link_to "Articles", articles_path %>
 
 
-<h2>Stimulus Check</h2>
+<h2>Scout Setup Demo</h2>
 
 <div data-controller="hello">
   <input data-hello-target="name" type="text">
 
   <button data-action="click->hello#greet">
     Greet
+  </button>
+
+  <button data-action="click->hello#complement">
+    Complement
   </button>
 
   <span data-hello-target="output">
