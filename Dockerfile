@@ -1,25 +1,23 @@
-# syntax=docker/dockerfile:1
+# syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.0
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
+# Rails app lives here
 WORKDIR /rails
 
 # Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_JOBS="4" \
-    BUNDLE_WITHOUT="development:test" \
-    BUNDLE_PATH="/usr/local/bundle"
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development"
 
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
-# Install packages needed to build gems
-# NOTE: This example project intentionally does not require or install node.js
-
+# Install packages needed to build gems and node modules
 RUN --mount=type=cache,target=/var/cache/apt \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   --mount=type=tmpfs,target=/var/log \
@@ -28,18 +26,32 @@ RUN --mount=type=cache,target=/var/cache/apt \
   apt-get update -qq \
   && apt-get install -yq --no-install-recommends \
     build-essential \
-    gnupg2 \
-    less \
+    curl \
     git \
     libpq-dev \
     libvips \
-    pkg-config
+    node-gyp \
+    pkg-config \
+    python-is-python3
+
+# Install JavaScript dependencies
+ARG NODE_VERSION=20.11.0
+ARG YARN_VERSION=1.22.21
+ENV PATH=/usr/local/node/bin:$PATH
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    npm install -g yarn@$YARN_VERSION && \
+    rm -rf /tmp/node-build-master
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
+
+# Install node modules
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
 # Copy application code
 COPY . .
@@ -61,10 +73,11 @@ RUN --mount=type=cache,target=/var/cache/apt \
   rm -f /etc/apt/apt.conf.d/docker-clean; \
   echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache; \
   apt-get update -qq \
-  && apt-get install -yq --no-install-recommends \
+  && apt-get install --no-install-recommends -y \
   curl \
-  postgresql-client \
-  libvips
+  libvips \
+  postgresql-client && \
+  rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
