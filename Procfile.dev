@@ -1,2 +1,2 @@
-web: bin/rails server -p 3000
-css: bin/rails dartsass:watch
+web: env RUBY_DEBUG_OPEN=true bin/rails server
+css: yarn watch:css
