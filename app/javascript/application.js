@@ -4,7 +4,5 @@ import "controllers"
 import * as bootstrap from "bootstrap"
 import "trix"
 import "@rails/actiontext"
-import "popper"
-import "bootstrap"
 
 console.log('Hello World from application.js');
