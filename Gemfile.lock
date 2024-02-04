@@ -123,7 +123,9 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (3.25.2)
+    google-protobuf (3.25.2-aarch64-linux)
+    google-protobuf (3.25.2-arm64-darwin)
+    google-protobuf (3.25.2-x86_64-linux)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -368,7 +370,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.3.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.5.5
