@@ -106,7 +106,8 @@ NOTE: You will need to generate a production secret with `bin/rails secret` and 
 ## Credits/References
 
 ### Rails with Docker
-* [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/)
+* [Quickstart: Compose and Rails](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/)
+* [Docker Rails Samples](https://docs.docker.com/samples/rails/)
 * [Docker for Rails Developers
 Build, Ship, and Run Your Applications Everywhere](https://pragprog.com/titles/ridocker/docker-for-rails-developers/)
 * [Ruby on Whales:
