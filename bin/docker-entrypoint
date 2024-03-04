@@ -1,17 +1,8 @@
 #!/bin/bash -e
 
-echo "entrypoint"
-echo "${*}"
-
-# NOTE: Enable this as you need to get migrations working in your deployed
-# (i.e. Production) environments. Match the condition check to what you have in
-# the Dockerfile CMD. I use puma in the production.Dockerfile as that's the
-# recommended option by the Puma team (https://github.com/puma/puma#rails), but
-# the default Rails Dockerfile uses `./bin/rails server`
-#
 # If running the rails server then create or migrate existing database
-# if [ "${*}" == "./bin/rails server" ]; then
-#   ./bin/rails db:prepare
-# fi
+if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+  ./bin/rails db:prepare
+fi
 
 exec "${@}"

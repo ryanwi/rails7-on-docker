@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.3.0
+ARG RUBY_VERSION=3.2.2
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
 # OS Level Dependencies
@@ -13,13 +13,24 @@ RUN --mount=type=cache,target=/var/cache/apt \
   apt-get update -qq \
   && apt-get install -yq --no-install-recommends \
     build-essential \
-    gnupg2 \
-    less \
+    curl \
     git \
     libpq-dev \
-    postgresql-client \
     libvips \
-    curl
+    node-gyp \
+    pkg-config \
+    postgresql-client \
+    python-is-python3
+
+# Install JavaScript dependencies
+ARG NODE_VERSION=20.11.0
+ARG YARN_VERSION=1.22.21
+ENV PATH=/usr/local/node/bin:$PATH
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    npm install -g yarn@$YARN_VERSION && \
+    rm -rf /tmp/node-build-master
+
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
