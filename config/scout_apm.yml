@@ -1,0 +1,50 @@
+# This configuration file is used for Scout APM.
+# Environment variables can also be used to configure Scout. See our help docs at https://scoutapm.com/docs/ruby/configuration#environment-variables for more information.
+common: &defaults
+
+  # key: Your Organization key for Scout APM. Found on the settings screen.
+  # - Default: none
+  key: INSERT_KEY_HERE
+
+  # log_level: Verboseness of logs.
+  # - Default: 'info'
+  # - Valid Options: debug, info, warn, error
+  log_level: debug
+  log_file_path: STDOUT
+  
+  # use_prepend: Use the newer `prepend` instrumentation method. In some cases, gems
+  #              that use `alias_method` can conflict with gems that use `prepend`.
+  #              To avoid the conflict, change this setting to match the method
+  #              that the other gems use.
+  #              If you have another APM gem installed, such as DataDog or NewRelic,
+  #              you will likely want to set `use_prepend` to true.
+  #
+  #              See https://scoutapm.com/docs/ruby/configuration#library-instrumentation-method
+  #              for more information.
+  # - Default: false
+  # - Valid Options: true, false
+  # use_prepend: true
+
+  # name: Application name in APM Web UI
+  # - Default: the application names comes from the Rails or Sinatra class name
+  # name:
+
+  # monitor: Enable Scout APM or not
+  # - Default: none
+  # - Valid Options: true, false
+  monitor: true
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+  monitor: true
+
+test:
+  <<: *defaults
+  monitor: false
+
+staging:
+  <<: *defaults
+

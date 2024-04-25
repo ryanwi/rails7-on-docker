@@ -13,6 +13,9 @@ services:
       - .env
     environment:
       - HISTFILE=/usr/src/app/log/.bash_history 
+      # Uncomment for staging
+      # - SCOUT_APM_HOST=https://checkin-staging.scoutapm.com
+      # - SCOUT_KEY=STAGING_KEY
     depends_on:
       db:
         condition: service_healthy

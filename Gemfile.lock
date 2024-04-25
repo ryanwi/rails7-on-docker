@@ -77,6 +77,10 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
+    airbrake (13.0.4)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.2)
+      rbtree3 (~> 0.6)
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.7)
@@ -212,6 +216,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.1.0)
+    rbtree3 (0.7.1)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     redis (5.1.0)
@@ -280,6 +285,8 @@ GEM
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    scout_apm (5.3.5)
+      parser
     selenium-webdriver (4.18.1)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
@@ -325,6 +332,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  airbrake
   bootsnap
   brakeman
   bundler-audit
@@ -342,6 +350,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rails-omakase
   rubocop-rspec
+  scout_apm
   selenium-webdriver
   sprockets-rails
   stimulus-rails
