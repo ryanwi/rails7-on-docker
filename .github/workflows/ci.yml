@@ -74,8 +74,7 @@ jobs:
 
       - name: Create database
         run: |
-          bundle exec rails db:create
-          bundle exec rails db:schema:load
+          bin/rails db:test:prepare
 
       - name: Run tests
         run: bundle exec rake
