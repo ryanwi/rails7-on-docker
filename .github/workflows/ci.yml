@@ -1,4 +1,4 @@
-name: Ruby
+name: CI
 
 on:
   push:
@@ -7,7 +7,27 @@ on:
     branches: [ main ]
 
 jobs:
-  linters:
+
+  scan_ruby:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # - name: Scan for security vulnerabilities in Ruby dependencies
+      #   run: bin/brakeman --no-pager
+
+      - name: Scan for security vulnerabilities in Ruby dependencies
+        run: |
+          bundle exec bundler-audit --update
+          bundle exec brakeman -q -w2
+
+  lint:
     runs-on: ubuntu-latest
 
     env:
@@ -16,16 +36,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - name: Run linters
         run: bundle exec rubocop --parallel
-      - name: Ruby security checks
-        run: |
-          bundle exec bundler-audit --update
-          bundle exec brakeman -q -w2
 
   test:
     runs-on: ubuntu-latest
