@@ -19,13 +19,10 @@ jobs:
         with:
           bundler-cache: true
 
-      # - name: Scan for security vulnerabilities in Ruby dependencies
-      #   run: bin/brakeman --no-pager
-
       - name: Scan for security vulnerabilities in Ruby dependencies
         run: |
           bundle exec bundler-audit --update
-          bundle exec brakeman -q -w2
+          bin/brakeman -q -w2 --no-pager
 
   lint:
     runs-on: ubuntu-latest
@@ -43,7 +40,7 @@ jobs:
           bundler-cache: true
 
       - name: Run linters
-        run: bundle exec rubocop --parallel
+        run: bin/rubocop --parallel
 
   test:
     runs-on: ubuntu-latest
