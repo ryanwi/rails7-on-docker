@@ -7,7 +7,7 @@ ruby "3.3.1"
 
 # Bundle edge Rails instead:
 # gem "rails", github: "rails/rails", branch: "7-2-stable"
-gem "rails", "7.2.0.beta1"
+gem "rails", "~> 7.2.0.beta1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -49,13 +49,18 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem "brakeman"
-  gem "bundler-audit"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", require: false
+
+  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  gem "rubocop-rails-omakase", require: false
+
+  gem "bundler-audit"
   gem "rspec-rails"
   gem "rubocop-rails"
-  gem "rubocop-rails-omakase", require: false
   gem "rubocop-rspec"
 end
 
@@ -65,9 +70,6 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
 group :test do

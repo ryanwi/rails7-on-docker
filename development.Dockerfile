@@ -1,8 +1,8 @@
-# syntax=docker/dockerfile:1
+# syntax = docker/dockerfile:1
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.1
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
+FROM docker.io/library/ruby:$RUBY_VERSION-slim as base
 
 # OS Level Dependencies
 RUN --mount=type=cache,target=/var/cache/apt \
@@ -19,7 +19,9 @@ RUN --mount=type=cache,target=/var/cache/apt \
     libpq-dev \
     postgresql-client \
     libvips \
-    curl
+    curl \
+    libjemalloc2 \
+    pkg-config
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
