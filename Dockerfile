@@ -68,4 +68,7 @@ HEALTHCHECK --interval=15s --timeout=3s --start-period=0s --start-interval=5s --
   CMD curl -f http://localhost:3000/up || exit 1
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["./bin/rails", "server"]
+
+# The default Rails Dockerfile uses `./bin/rails server`, but when using Puma, 
+# they recommend using bundle exec puma. ref: https://github.com/puma/puma#rails
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
