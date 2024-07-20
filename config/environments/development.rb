@@ -14,9 +14,6 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  # Allow access when running in docker
-  config.web_console.allowed_ips = [ "172.16.0.0/12", "192.168.0.0/16" ]
-
   # Enable server timing.
   config.server_timing = true
 
@@ -48,12 +45,6 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
-  # Raise exceptions for disallowed deprecations.
-  config.active_support.disallowed_deprecation = :raise
-
-  # Tell Active Support which deprecation messages to disallow.
-  config.active_support.disallowed_deprecation_warnings = []
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load

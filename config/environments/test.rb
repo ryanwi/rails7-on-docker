@@ -1,5 +1,3 @@
-require "active_support/core_ext/integer/time"
-
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
@@ -18,7 +16,7 @@ Rails.application.configure do
   config.eager_load = ENV["CI"].present?
 
   # Configure public file server for tests with Cache-Control for performance.
-  config.public_file_server.headers = { "Cache-Control" => "public, max-age=#{1.hour.to_i}" }
+  config.public_file_server.headers = { "Cache-Control" => "public, max-age=3600" }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local = true
@@ -49,12 +47,6 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
-
-  # Raise exceptions for disallowed deprecations.
-  config.active_support.disallowed_deprecation = :raise
-
-  # Tell Active Support which deprecation messages to disallow.
-  config.active_support.disallowed_deprecation_warnings = []
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
