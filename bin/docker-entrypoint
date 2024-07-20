@@ -1,16 +1,22 @@
 #!/bin/bash -e
 
-echo "entrypoint"
-echo "${*}"
+# Enable jemalloc for reduced memory usage and latency.
+if [ -z "${LD_PRELOAD+x}" ] && [ -f /usr/lib/*/libjemalloc.so.2 ]; then
+  export LD_PRELOAD="$(echo /usr/lib/*/libjemalloc.so.2)"
+fi
 
 # NOTE: Enable this as you need to get migrations working in your deployed
 # (i.e. Production) environments. Match the condition check to what you have in
 # the Dockerfile CMD. I use puma in the production.Dockerfile as that's the
 # recommended option by the Puma team (https://github.com/puma/puma#rails), but
 # the default Rails Dockerfile uses `./bin/rails server`
-#
-# If running the rails server then create or migrate existing database
-# if [ "${*}" == "./bin/rails server" ]; then
+
+# echo "${1}"
+# echo "${2}"
+# echo "${3}"
+
+# # If running the rails server then create or migrate existing database
+# if [ "${1}" == "bundle" ] && [ "${2}" == "exec" ] && [ "${3}" == "puma" ]; then
 #   ./bin/rails db:prepare
 # fi
 

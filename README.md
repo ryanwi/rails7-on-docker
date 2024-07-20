@@ -1,4 +1,4 @@
-[![Ruby](https://github.com/ryanwi/rails7-on-docker/actions/workflows/ruby.yml/badge.svg)](https://github.com/ryanwi/rails7-on-docker/actions/workflows/ruby.yml)
+[![CI](https://github.com/ryanwi/rails7-on-docker/actions/workflows/ci.yml/badge.svg)](https://github.com/ryanwi/rails7-on-docker/actions/workflows/ci.yml)
 [![Docker](https://github.com/ryanwi/rails7-on-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/ryanwi/rails7-on-docker/actions/workflows/docker.yml)
 
 Start here: https://github.com/ryanwi/rails7-on-docker/generate
@@ -85,7 +85,7 @@ docker run --rm --env SECRET_KEY_BASE=dummy rails-on-docker
 
 ### With legacy builder (no BuildKit)
 ```
-docker build --tag rails-on-docker --file production.Dockerfile .
+docker build --tag rails-on-docker .
 ```
 
 Test the image can be used and Rails starts up, use a fake key for testing purposes only:
