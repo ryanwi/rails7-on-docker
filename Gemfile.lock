@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: f114a247aa2046287db033bd652c3e5b9930f549
+  revision: e1d58cfd05ae1cc0bfc1006b7ce973a7730831df
   branch: main
   specs:
     actioncable (8.0.0.alpha)
@@ -27,8 +27,7 @@ GIT
       actionview (= 8.0.0.alpha)
       activesupport (= 8.0.0.alpha)
       nokogiri (>= 1.8.5)
-      racc
-      rack (>= 2.2.4, < 3.2)
+      rack (>= 2.2.4)
       rack-session (>= 1.0.1)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.2)
@@ -71,7 +70,9 @@ GIT
       i18n (>= 1.6, < 2)
       logger (>= 1.4.2)
       minitest (>= 5.1)
+      securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     rails (8.0.0.alpha)
       actioncable (= 8.0.0.alpha)
       actionmailbox (= 8.0.0.alpha)
@@ -98,8 +99,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.6)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
@@ -133,12 +134,7 @@ GEM
     erubi (1.13.0)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-aarch64-linux-musl)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm-linux-musl)
     ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86-linux-gnu)
-    ffi (1.17.0-x86-linux-musl)
-    ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     ffi (1.17.0-x86_64-linux-musl)
     globalid (1.2.1)
@@ -224,10 +220,6 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (5.3.0)
-      redis-client (>= 0.22.0)
-    redis-client (0.22.2)
-      connection_pool
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
@@ -310,6 +302,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    uri (0.13.1)
     useragent (0.16.10)
     web-console (4.2.1)
       actionview (>= 6.0.0)
@@ -326,16 +319,10 @@ GEM
     zeitwerk (2.6.18)
 
 PLATFORMS
+  aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux
-  arm-linux-gnu
-  arm-linux-musl
   arm64-darwin
-  x86-linux
-  x86-linux-gnu
-  x86-linux-musl
-  x86_64-darwin
   x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
@@ -353,7 +340,6 @@ DEPENDENCIES
   puma (~> 6.4)
   rack-mini-profiler
   rails!
-  redis (~> 5.3)
   rspec-rails
   rubocop-rails
   rubocop-rails-omakase
