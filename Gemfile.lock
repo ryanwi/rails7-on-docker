@@ -331,7 +331,7 @@ DEPENDENCIES
   pg (~> 1.5)
   puma (~> 6.4)
   rack-mini-profiler
-  rails (~> 7.2.0.rc1)
+  rails (~> 7.2, >= 7.2.1)
   redis (~> 5.3)
   rspec-rails
   rubocop-rails
