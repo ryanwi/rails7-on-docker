@@ -12,7 +12,7 @@ This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and 
 ## Features
 
 * Rails 7
-* Ruby 3
+* Ruby 3.3
 * Dockerfile and Docker Compose configuration
 * PostgreSQL database
 * Redis
