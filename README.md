@@ -132,6 +132,6 @@ Dockerizing Ruby and Rails development](https://evilmartians.com/chronicles/ruby
 **Ryan Williams**
 
 - <https://www.ryanwilliams.dev>
-- <https://twitter.com/ryanwi>
+- <https://bsky.app/profile/ryanwi.bsky.social>
 - <https://hachyderm.io/@ryanwi>
 - <https://github.com/ryanwi>
