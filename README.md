@@ -7,7 +7,11 @@ Start here: https://github.com/ryanwi/rails7-on-docker/generate
 
 This app demonstrates Rails 7 with PostgreSQL, import maps, turbo, stimulus and hotwire, all running in Docker.
 
-**NOTE:** [There is also an example Rails 6 application working in Docker with Webpacker](https://github.com/ryanwi/rails-on-docker)
+**NOTE:** There are also examples Rails 8 and Rails 6 applications working in Docker
+
+* [Rails 8 Applicaiton Docker Template](https://github.com/ryanwi/rails8-on-docker)
+* [Rails 7 Applicaiton Docker Template](https://github.com/ryanwi/rails7-on-docker)
+* [Rails 6 Application Docker Template](https://github.com/ryanwi/rails-on-docker)
 
 ## Features
 
