@@ -7,8 +7,8 @@ inherit_gem:
   rubocop-rails-omakase: rubocop.yml
 
 AllCops:
-  TargetRubyVersion: 3.3.6
-  TargetRailsVersion: 7.1.0
+  TargetRubyVersion: 3.4.1
+  TargetRailsVersion: 7.2.2
   DisabledByDefault: true
   Exclude:
     - "bin/**/*"
