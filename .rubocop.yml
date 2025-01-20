@@ -8,7 +8,7 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 3.4.1
-  TargetRailsVersion: 7.2.0
+  TargetRailsVersion: 7.2.2
   DisabledByDefault: true
   Exclude:
     - "bin/**/*"
