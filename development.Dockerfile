@@ -21,7 +21,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
     libvips \
     curl \
     libjemalloc2 \
-    pkg-config
+    pkg-config \
+    libyaml-dev
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
