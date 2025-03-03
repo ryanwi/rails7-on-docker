@@ -147,10 +147,12 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    mini_magick (4.13.2)
+    mini_magick (5.2.0)
+      benchmark
+      logger
     mini_mime (1.1.5)
     minitest (5.25.4)
-    msgpack (1.7.5)
+    msgpack (1.8.0)
     net-imap (0.5.6)
       date
       net-protocol
@@ -158,7 +160,8 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.5.0)
+    net-smtp (0.5.1)
+      net-protocol
     nio4r (2.7.4)
     nokogiri (1.18.3-aarch64-linux-gnu)
       racc (~> 1.4)
