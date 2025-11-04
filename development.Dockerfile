@@ -2,6 +2,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.9
+ARG NODE_VERSION=22.12.0
 FROM docker.io/library/ruby:$RUBY_VERSION-slim as base
 
 # OS Level Dependencies
@@ -27,6 +28,17 @@ RUN --mount=type=cache,target=/var/cache/apt \
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
   BUNDLE_RETRY=3
+
+# Install Node.js
+ARG NODE_VERSION
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    rm -rf /tmp/node-build-master
+
+ENV PATH=/usr/local/node/bin:$PATH
+
+# Enable corepack for yarn/pnpm
+RUN corepack enable
 
 WORKDIR /usr/src/app
 

@@ -7,6 +7,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.9
+ARG NODE_VERSION=22.12.0
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
@@ -26,10 +27,21 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
+# Install packages needed to build gems and Node.js
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config libyaml-dev && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config libyaml-dev curl && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Install Node.js
+ARG NODE_VERSION
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    rm -rf /tmp/node-build-master
+
+ENV PATH=/usr/local/node/bin:$PATH
+
+# Enable corepack for yarn/pnpm
+RUN corepack enable
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./

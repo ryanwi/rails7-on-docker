@@ -206,6 +206,9 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.4)
+    rack-cors (3.0.0)
+      logger
+      rack (>= 3.0.14)
     rack-mini-profiler (4.0.1)
       rack (>= 1.2.0)
     rack-session (2.1.1)
@@ -378,6 +381,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.5)
   puma (~> 6.5)
+  rack-cors
   rack-mini-profiler
   rails (~> 7.2)
   redis (~> 5.3)

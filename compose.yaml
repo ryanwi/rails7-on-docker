@@ -12,12 +12,26 @@ services:
     env_file:
       - .env
     environment:
-      - HISTFILE=/usr/src/app/log/.bash_history 
+      - HISTFILE=/usr/src/app/log/.bash_history
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_started
+  frontend:
+    build:
+      context: ./
+      dockerfile: development.Dockerfile
+    command: bash -c "cd frontend && npm run dev -- --host 0.0.0.0"
+    volumes:
+      - .:/usr/src/app
+      - node_modules:/usr/src/app/frontend/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3000
+    stdin_open: true
+    tty: true
   db:
     image: postgres:17
     ports:
@@ -40,3 +54,4 @@ volumes:
   pg_data:
   redis_data:
   bundle:
+  node_modules:
